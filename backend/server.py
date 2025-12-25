@@ -107,7 +107,7 @@ async def query_overpass_api(lat: float, lon: float, radius: int) -> List[dict]:
         logger.error(f"Error querying Overpass API: {e}")
         raise HTTPException(status_code=500, detail="Error fetching shelter data")
 
-def parse_shelter_data(element: dict) -> Shelter:
+def parse_shelter_data(element: dict) -> Optional[Shelter]:
     """
     Parse OpenStreetMap element data into a Shelter object.
     """
@@ -124,8 +124,20 @@ def parse_shelter_data(element: dict) -> Shelter:
         lat = element.get('lat', 0)
         lon = element.get('lon', 0)
     
-    # Extract name
-    name = tags.get('name', tags.get('operator', 'Unnamed Shelter'))
+    # Extract name - try multiple fields to ensure we get a proper name from API
+    name = (
+        tags.get('name') or 
+        tags.get('operator') or 
+        tags.get('brand') or 
+        tags.get('official_name') or
+        tags.get('alt_name') or
+        tags.get('short_name') or
+        None
+    )
+    
+    # Skip shelters without a proper name
+    if not name or name.strip() == '':
+        return None
     
     # Extract address components
     address_parts = []
@@ -209,6 +221,10 @@ async def search_shelters(search_request: ShelterSearchRequest):
         for element in elements:
             try:
                 shelter = parse_shelter_data(element)
+                
+                # Skip shelters without proper names (parse_shelter_data returns None)
+                if shelter is None:
+                    continue
                 
                 # Apply filters
                 if search_request.pet_friendly is not None:
