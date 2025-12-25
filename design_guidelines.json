@@ -1,0 +1,174 @@
+{
+  "identity": {
+    "persona": "E1: The Anti-AI Designer",
+    "mission": "Create a premium, festive, and dignified shelter discovery experience that breaks the 'generic nonprofit' mold.",
+    "principles": [
+      "Fusion: Winter Festival aesthetics x Critical Utility Dashboard",
+      "Emotion: Hope, Warmth, Dignity",
+      "Content: Real-time data is the hero",
+      "Contrast: Icy backgrounds vs. Warm, glowing accents"
+    ]
+  },
+  "typography": {
+    "headings": {
+      "family": "Playfair Display, serif",
+      "usage": "All H1-H3 headings. Adds editorial warmth and trust.",
+      "weights": ["600", "700"],
+      "letterSpacing": "-0.02em"
+    },
+    "body": {
+      "family": "Manrope, sans-serif",
+      "usage": "Body text, UI elements, map labels, data.",
+      "weights": ["400", "500", "600"],
+      "letterSpacing": "normal"
+    },
+    "mono": {
+      "family": "JetBrains Mono, monospace",
+      "usage": "Coordinates, technical data points (if any).",
+      "weights": ["400"]
+    }
+  },
+  "colors": {
+    "palette": {
+      "primary": {
+        "name": "Midnight Winter",
+        "hex": "#0f172a",
+        "usage": "Main background, deep contrast elements"
+      },
+      "secondary": {
+        "name": "Frost",
+        "hex": "#f1f5f9",
+        "usage": "Light backgrounds, cards, panels"
+      },
+      "accent": {
+        "name": "Hearth Gold",
+        "hex": "#f59e0b",
+        "usage": "Primary CTAs, active states, 'warmth' indicators"
+      },
+      "neutral": {
+        "name": "Slate",
+        "hex": "#64748b",
+        "usage": "Secondary text, borders"
+      },
+      "success": {
+        "name": "Pine Green",
+        "hex": "#10b981",
+        "usage": "Open status, available capacity"
+      },
+      "error": {
+        "name": "Berry Red",
+        "hex": "#ef4444",
+        "usage": "Closed status, alerts"
+      }
+    },
+    "gradients": {
+      "hero_overlay": "linear-gradient(to bottom, rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.95))",
+      "warm_glow": "radial-gradient(circle at center, rgba(245, 158, 11, 0.15) 0%, transparent 70%)"
+    }
+  },
+  "visual_enhancers": {
+    "textures": [
+      "Subtle noise overlay (opacity 0.03) on solid backgrounds to prevent 'digital flatness'",
+      "Canvas-based snowfall effect (lightweight, toggleable)"
+    ],
+    "glassmorphism": {
+      "style": "Crystal Glass",
+      "classes": "bg-slate-900/70 backdrop-blur-xl border border-white/10 shadow-2xl"
+    },
+    "shadows": {
+      "card": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+      "glow": "0 0 15px rgba(245, 158, 11, 0.3)"
+    }
+  },
+  "layout": {
+    "grid_systems": {
+      "marketing": {
+        "name": "The Tetris Grid",
+        "classes": "grid grid-cols-1 md:grid-cols-12 gap-8",
+        "usage": "Landing page, Impact section"
+      },
+      "dashboard": {
+        "name": "The Control Room",
+        "classes": "grid grid-cols-1 lg:grid-cols-3 gap-0 h-[calc(100vh-4rem)]",
+        "usage": "Search results: Map (2 cols) + List (1 col)"
+      }
+    },
+    "spacing": {
+      "container_padding": "px-4 md:px-8 lg:px-12",
+      "section_gap": "py-20 md:py-32"
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-amber-500 hover:bg-amber-600 text-white font-semibold rounded-full px-8 py-3 transition-all shadow-[0_0_15px_rgba(245,158,11,0.3)] hover:shadow-[0_0_25px_rgba(245,158,11,0.5)]",
+      "secondary": "bg-transparent border border-slate-200 text-slate-900 hover:bg-slate-50 rounded-full px-8 py-3 transition-all"
+    },
+    "cards": {
+      "shelter_card": "group relative overflow-hidden rounded-xl border border-slate-200 bg-white p-6 hover:border-amber-500/50 transition-all duration-300 hover:shadow-lg",
+      "glass_panel": "bg-white/80 backdrop-blur-md border border-white/20 rounded-2xl shadow-xl"
+    },
+    "inputs": {
+      "search_bar": "h-14 pl-12 pr-4 rounded-full border-0 bg-white/90 backdrop-blur shadow-lg focus:ring-2 focus:ring-amber-500 text-lg w-full"
+    }
+  },
+  "assets": {
+    "images": [
+      {
+        "category": "hero_background",
+        "url": "https://images.unsplash.com/photo-1610059011191-0413064bf307?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "description": "Winter fog with warm streetlights - atmospheric and emotional.",
+        "usage": "Hero section background with heavy overlay."
+      },
+      {
+        "category": "community_warmth",
+        "url": "https://images.pexels.com/photos/6646782/pexels-photo-6646782.jpeg",
+        "description": "Volunteers/Community interaction.",
+        "usage": "About/Volunteer section."
+      },
+      {
+        "category": "shelter_interior",
+        "url": "https://images.unsplash.com/photo-1576325782513-7d52f7c3baae?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "description": "Warm fireplace interior.",
+        "usage": "Donation/Impact section to symbolize 'warmth'."
+      }
+    ],
+    "icons": {
+      "library": "lucide-react",
+      "preferred": ["Snowflake", "Flame", "MapPin", "Navigation", "Heart", "Coffee", "Bed"]
+    }
+  },
+  "accessibility": {
+    "map": {
+      "requirement": "Dual View (Map + List)",
+      "instruction": "Ensure map pins are keyboard accessible. Provide a synchronized list view for all map data."
+    },
+    "contrast": {
+      "instruction": "Ensure all text on dark backgrounds meets WCAG AA. Use 'text-slate-200' on dark, not 'text-gray-500'."
+    },
+    "motion": {
+      "instruction": "Respect 'prefers-reduced-motion'. The snowfall effect MUST have a toggle or auto-disable."
+    }
+  },
+  "tech_stack": {
+    "framework": "React",
+    "styling": "Tailwind CSS",
+    "ui_library": "Shadcn UI (customized)",
+    "map_integration": "Leaflet (react-leaflet) or MapLibre",
+    "state_management": "React Context or Zustand"
+  },
+  "instructions_to_main_agent": [
+    "1. INSTALL FONTS: Add '@fontsource/playfair-display' and '@fontsource/manrope' immediately.",
+    "2. SETUP THEME: Configure tailwind.config.js with the 'Midnight Winter' palette.",
+    "3. BUILD LAYOUT: Create the 'Control Room' layout for the main app view (Map Left/Top, List Right/Bottom).",
+    "4. IMPLEMENT MAP: Use OpenStreetMap data via Overpass API. Do NOT mock data if possible, or use a very realistic fallback.",
+    "5. ADD SNOW: Create a 'Snowfall' component that is subtle (small particles, slow movement).",
+    "6. NO TESTIMONIALS: Strictly adhere to the 'No Testimonials' rule.",
+    "7. DATA-TESTID: Add 'data-testid' to all interactive elements."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Avoid generic AI designs. Be bold with spacing (p-8, p-12).",
+    "Use 'glassmorphism' for overlays to keep the winter feel.",
+    "Ensure the 'Donate' button is always visible and distinct (Warm Gold).",
+    "Mobile responsiveness is paramount - the map must work on phones."
+  ]
+}
